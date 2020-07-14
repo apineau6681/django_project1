@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html"%}
+{% block body_block %}
+    <h1>WELCOME TO RELATIVE URL TEMPLATES</h1>
+    <a href="{% url 'first_app:other' %}">THE OTHER PAGE</a>
+    <a href="{% url 'first_app:profiles' %}">PROFILES PAGE</a>
+    <a href="{% url 'admin:index' %}">ADMIN PAGE</a>
+    <a href="{% url 'index' %}">INDEX PAGE</a>
+    <a href="{% url 'homepage' %}">HOME PAGE</a>
+{% endblock %}

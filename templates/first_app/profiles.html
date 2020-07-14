@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Display Profiles and Stuff</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+  </head>
+  <body>
+
+  <h1> Here are the results</h1>
+
+  <div class="records">
+
+    {% if profile_records %}
+    <table>
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Birth Date</th>
+        <th>Nationality</th>
+        <th>Email</th>
+        <th>Address</th>
+      </thead>
+
+      {% for p in profile_records %}
+      <tr>
+        <td>{{p.first_name}}</td>
+        <td>{{p.last_name}}</td>
+        <td>{{p.birth_date}}</td>
+        <td>{{p.nationality}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.address}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    {% else %}
+    <p>No profile record found</p>
+    {% endif %}
+  </div>
+
+  </body>
+</html>
